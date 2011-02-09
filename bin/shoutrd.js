@@ -26,8 +26,6 @@ var Shoutr   = require("shoutr");
 
 process.on( "uncaughtException", function( err ) {
 	console.log("Caught exception: " + err.message);
-	console.log("Restarting server.");
-	Shoutr.server.run();
 });
 
 var _main = function(argv) {
