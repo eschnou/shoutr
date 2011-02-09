@@ -1,0 +1,11 @@
+{ "name" : "shoutr"
+, "description" : "A decentralized social network server that can federate with the OStatus protocol."
+, "engines": { "node" : ">=0.3.8-pre < 4.0.0" }
+, "version": "v0.1.0"
+, "keywords": ["ostatus", "social network", "facebook", "diaspora"]
+, "homepage": "http://shoutr.org"
+, "author": "Laurent Eschenauer <laurent@eschenauer.be> (http://eschnou.com)"
+, "bin" : { "status" : "./bin/shoutrd.js"}
+, "main" : "./lib/shoutr"
+, "repository" : { "type": "git", "url": "https://github.com/eschnou/shoutr.git"}
+}
