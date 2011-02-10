@@ -32,6 +32,4 @@ var _main = function(argv) {
 	Shoutr.server.run();
 };
 
-debugger;
-
 _main(process.argv);
