@@ -23,7 +23,7 @@
 */
 
 var Common 	= require('./common')
-,	Api 	= require('../lib/shoutr/backend')
+,	Api 	= require('../lib/shoutr/database')
 ,	Assert 	= require('assert');
 
 // The test: We add a first user and check that an error

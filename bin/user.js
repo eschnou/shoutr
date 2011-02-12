@@ -30,8 +30,8 @@ var user = {
 ,		password: md5("secret") 			
 };
 
-Shoutr.backend.user.connect({"path": Path.join(Shoutr.config.database, "/users.db")}, function() {
-	Shoutr.backend.user.add(user, function(){});
+Shoutr.database.user.connect({"path": Path.join(Shoutr.config.database, "/users.db")}, function() {
+	Shoutr.database.user.add(user, function(){});
 });
 
 function md5(string) {
