@@ -27,7 +27,7 @@ var Path = require('path');
 var config = {
 		// The hostname serving this service (used when creating full URLs to resources)
 		host: "shoutr.org"
-,		database : Path.join(__dirname, "./data/")			
+,		database : {"path": Path.join(__dirname, "./data/")}
 };
 
 exports.data = config;

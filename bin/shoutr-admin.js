@@ -22,51 +22,41 @@
  * THE SOFTWARE.
 */
 
-var Dirty 	= require('dirty')
-,	Http	= require('../support/http')
-,	Data;
+var Shoutr  = require("shoutr")
+,   Path	= require("path")
+,	argv 	= require('optimist').argv;
 
-function connect(options, callback) {
-	if (options.path) {
-		Data = new Dirty(options.path);
-		Data.on('load', function(records) {
-			callback(null, records);
-		});
+process.on( "uncaughtException", function( err ) {
+	console.log("Error: " + err.message);
+});
+
+
+function main() {
+	_init();	
+}
+
+function _init() {
+	Shoutr.database.init(global.config.database, function(err) {
+		_dispatch();
+	});
+};
+
+function _dispatch() {
+	if(argv._ == "add_user") {
+		_add_user();
 	} else {
-		Data = new Dirty();
-		callback(null, 0);
+		throw new Error("Invalid command");
 	}
 }
 
-function get(username, callback) {
-	var profile = Data.get(username);
-	if (!profile) return callback(Http.error("Unknown user " + username, 404));
-	callback(null, profile);
-}
-
-function update(username, profile, callback) {
-	// Validate the entry
-	if (!_validate(profile)) {
-		return callback(Http.error("Something is wrong with this profile", 400));
+function _add_user() {	
+	if (!argv.username || !argv.password || !argv.email) {
+		throw new Error("Missing arguments");
 	}
-	// Insert in database and return
-	Data.set(username, profile);
-	callback(null, profile);
+	new Shoutr.api().addUser(argv.username, argv.password, argv.email, function(err, result) {
+		if (err) throw err;
+		console.log("User " + argv.username + " has been added.");
+	});
 }
 
-function remove(username, callback) {
-	Data.rm(username);
-	callback(null, username);
-}
-
-// TODO Add proper validation of an entry
-function _validate(profile) {
-	if (!profile.fullname) return false;
-	if (!profile.email) return false;	
-	return true;
-}
-
-exports.connect = connect;
-exports.get  	= get;
-exports.update 	= update;
-exports.remove 	= remove;
+main();
