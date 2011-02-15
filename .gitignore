@@ -1,3 +1,4 @@
 .project
 .settings*
+config.js
 data/*.db
