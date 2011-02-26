@@ -1,5 +1,5 @@
 /*
- * Shoutr - A decentralized social networking service
+ * social.js - A decentralized social networking service
  * 
  * Copyright (C) 2010 Laurent Eschenauer <laurent@eschenauer.be>
  * 
@@ -22,14 +22,14 @@
  * THE SOFTWARE.
 */
 
-var Shoutr   = require("shoutr");
+var social   = require("social.js");
 
-//process.on( "uncaughtException", function( err ) {
-//	console.log("Caught exception: " + err.message);
-//});
+process.on( "uncaughtException", function( err ) {
+	console.log("Caught exception: " + err.message);
+});
 
 var _main = function(argv) {
-	Shoutr.server.run();
+	social.server.run();
 };
 
 _main(process.argv);

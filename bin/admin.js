@@ -1,5 +1,5 @@
 /*
- * Shoutr - A decentralized social networking service
+ * social.js - A decentralized social networking service
  * 
  * Copyright (C) 2010 Laurent Eschenauer <laurent@eschenauer.be>
  * 
@@ -22,27 +22,41 @@
  * THE SOFTWARE.
 */
 
-var Ostatus = require("ostatus")
-,   Hcard = Ostatus.hcard
-,	Http = require("../../support/http")
-,	Url = require("url")
-,   Api = require("../../service/api");
+var social      = require("social.js")
+,   Path	= require("path")
+,	argv 	= require("optimist").argv;
 
-function index(app){
-    app.get('/:username', function(req, res, next){
-    	var username = req.params.username;
-    	new Api().getProfile(username, function(err, profile) {
-    		if (err) return Http.response(res, err.message, 500, "text/plain");
-    		profile.username = username;
-	    	Hcard.render(profile, function(err, result) {
-	    		if (err) {
-	    			return Http.response(res, err.message, 500, "text/plain");
-	    		} else {
-	    			return Http.response(res, result);
-	    		}
-	    	});
-    	});
-    });   
+process.on( "uncaughtException", function( err ) {
+	console.log("Error: " + err.message);
+});
+
+
+function main() {
+	_init();	
 }
 
-exports.index  = index;
+function _init() {
+	social.database.init(global.config.database, function(err) {
+		_dispatch();
+	});
+};
+
+function _dispatch() {
+	if(argv._ == "add_user") {
+		_add_user();
+	} else {
+		throw new Error("Invalid command");
+	}
+}
+
+function _add_user() {	
+	if (!argv.username || !argv.password || !argv.email) {
+		throw new Error("Missing arguments");
+	}
+	new social.api().addUser(argv.username, argv.password, argv.email, function(err, result) {
+		if (err) throw err;
+		console.log("User " + argv.username + " has been added.");
+	});
+}
+
+main();

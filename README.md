@@ -1,23 +1,37 @@
-Shoutr
-=====
+social.js
+=========
 
-Shoutr is decentralized social networking server. It can federate with any other host supporting the [OStatus](http://ostatus.org) protocol.
+Social.js is decentralized social networking server. It can federate with any other host supporting the [OStatus](http://ostatus.org) protocol.
 
 *** Ongoing development on the master branch until I reach a first stable 0.1 release ***
 
 Copyright (C) 2010 Laurent Eschenauer <laurent@eschenauer.be>
 
-Requirements
+Install
+-------
+
+If you are using npm (the node packet manager), installing is as easy as:
+    npm install social.js
+
+
+Dependencies
 ------------
 
-* node.js
-* [node-ostatus](http://github.com/eschnou/node-ostatus/)
+If you are using this from source, you can install the dependencies using npm from the root of the source folder:
+    npm bundle
+
+Or you can install all dependencies manually:
+- [node](http://nodejs.org/) v4+ is required, I'm developing against trunk.
+- [node-ostatus](http://github.com/eschnou/node-ostatus/)
 
 Usage
 -----
 
+Add a user with the following command:
+    node ./bin/admin.js add_user --username alice --password wonderland --email alice@wonderland.lit
+
 Run the server by launching the script in bin/:
-    node ./bin/shoutrd.js
+    node ./bin/social.js
 
 License
 -------

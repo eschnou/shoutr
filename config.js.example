@@ -1,5 +1,5 @@
 /*
- * Shoutr - A decentralized social networking service
+ * social.js - A decentralized social networking service
  * 
  * Copyright (C) 2010 Laurent Eschenauer <laurent@eschenauer.be>
  * 
@@ -26,7 +26,7 @@ var Path = require('path');
 
 var config = {
 		// The hostname serving this service (used when creating full URLs to resources)
-		host: "shoutr.org"
+		host: "example.com"
 		
 		// The full path to the folder containing the database tables
 ,		database : {"path": Path.join(__dirname, "./data/")}
