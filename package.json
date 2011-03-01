@@ -1,11 +1,18 @@
 { "name" : "social.js"
 , "description" : "A decentralized social network server that can federate with the OStatus protocol."
 , "engines": { "node" : "0.4.x" }
-, "version": "v0.1.0"
+, "version": "v0.1.0dev"
 , "keywords": ["ostatus", "social network", "facebook", "diaspora"]
 , "homepage": "http://socialjs.org"
 , "author": "Laurent Eschenauer <laurent@eschenauer.be> (http://eschnou.com)"
-, "bin" : { "sociald" : "./bin/social.js"}
+, "bin" : { "sociald" : "./bin/social.js", "social-admin" : "./bin/admin.js"}
 , "main" : "./lib/social"
 , "repository" : { "type": "git", "url": "https://github.com/eschnou/socialjs.git"}
+, "dependencies" : {
+    "flow"	: ">=0.2.0"
+   ,"dirty" : ">=0.9.1"
+   ,"connect": ">=1.0.0"
+   ,"connect-auth": ">=0.2.1"
+   ,"optimist": ">=0.1.6"
+  }
 }

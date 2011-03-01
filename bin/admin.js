@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /*
  * social.js - A decentralized social networking service
  * 
@@ -22,7 +23,7 @@
  * THE SOFTWARE.
 */
 
-var social      = require("social.js")
+var social  = require("social.js")
 ,   Path	= require("path")
 ,	argv 	= require("optimist").argv;
 
@@ -36,7 +37,7 @@ function main() {
 }
 
 function _init() {
-	social.database.init(global.config.database, function(err) {
+	social.database.init(social.config.database, function(err) {
 		_dispatch();
 	});
 };

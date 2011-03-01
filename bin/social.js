@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /*
  * social.js - A decentralized social networking service
  * 
@@ -24,9 +25,9 @@
 
 var social   = require("social.js");
 
-process.on( "uncaughtException", function( err ) {
-	console.log("Caught exception: " + err.message);
-});
+//process.on( "uncaughtException", function( err ) {
+//	console.log("Caught exception: " + err.message);
+//});
 
 var _main = function(argv) {
 	social.server.run();
