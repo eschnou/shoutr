@@ -2,3 +2,4 @@
 .settings*
 config.js
 data/*.db
+node_modules
