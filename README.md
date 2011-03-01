@@ -1,7 +1,7 @@
 social.JS
 =========
 
-SocialJS is lightweight and extensible social networking platform built with [[node|http://nodejs.org]].
+SocialJS is lightweight and extensible social networking platform built with <http://nodejs.org>.
 
 *** Development has just started, don't waste your time trying to use/build this code. The instructions below are outdated, I'll refresh the documentation when releasing a stable 0.1 version. ***
 
@@ -13,6 +13,7 @@ Design goals
 **Lighweight:** A small, fast, efficient, scalable (add your dream to the list) core service that manages users, profiles, activities and relationships. The underlying database is a key/value store and could be powered ny any NoSQL engine. The resources are exposed to clients via a REST API. 
 
 **Extensible:** A plugin architecture that enable to easily add new features like:
+
 -  Adding various federation protocols (such as ostatus, onesocialweb, diaspora, etc.)
 -  Adding other client APIs (e.g. a status.net API or Opensocial) to benefit from existing clients
 -  Adding user services that leverage federation (like a personal data store)
