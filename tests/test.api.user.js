@@ -1,5 +1,5 @@
 /*
- * social.js - A decentralized social networking service
+ * shoutr - A decentralized social networking platform
  * 
  * Copyright (C) 2010 Laurent Eschenauer <laurent@eschenauer.be>
  * 
@@ -23,7 +23,7 @@
 */
 
 var Common 	= require('./common')
-,	Api 	= require('../lib/social.js/database')
+,	Api 	= require('../lib/shoutr/database')
 ,	Assert 	= require('assert');
 
 // The test: We add a first user and check that an error

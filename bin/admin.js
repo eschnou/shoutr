@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /*
- * social.js - A decentralized social networking service
+ * shoutr - A decentralized social networking platform
  * 
  * Copyright (C) 2010 Laurent Eschenauer <laurent@eschenauer.be>
  * 
@@ -23,7 +23,7 @@
  * THE SOFTWARE.
 */
 
-var social  = require("social.js")
+var social  = require("shoutr")
 ,   Path	= require("path")
 ,	argv 	= require("optimist").argv;
 

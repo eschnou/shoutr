@@ -1,5 +1,6 @@
+#!/usr/bin/env node
 /*
- * social.js - A decentralized social networking service
+ * shoutr - A decentralized social networking platform
  * 
  * Copyright (C) 2010 Laurent Eschenauer <laurent@eschenauer.be>
  * 
@@ -21,33 +22,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
 */
-var Ostatus = require("ostatus")
-,	Flow = require("flow")
-,   Error = require("../../support/error")
-,   Push = Ostatus.push
-,	Http = require("../../support/http")
-,	Url = require("url")
-,	Qs = require("querystring")
-,   Api = require("../../service/api")
-,	Util = require('util');   
- 
-function routes(app){
-	app.post('/salmon/:username', function(req, res){
-    	var username = req.params.username;
-	    var body = '';
-		console.log("Incoming Salmon for user " + username);
-		req.on('data', function (c) { body += c.toString(); })
-	       .on('end', function () {
-	    	   // Some temporary debugging stuff
-	    	   console.log("Received " + body);
-	    	   console.log("Headers: " + Util.inspect(req.headers));
-	    	   query = Qs.parse(body);
-	    	   for (k in query) {
-	    		   console.log(k + ": " + query[k]);
-	    	   }
-    		   return Http.response(res, false, 204, "text/plain");
-	       });
-	});
-}
 
-exports.routes = routes;
+var social   = require("shoutr");
+
+//process.on( "uncaughtException", function( err ) {
+//	console.log("Caught exception: " + err.message);
+//});
+
+var _main = function(argv) {
+	social.server.run();
+};
+
+_main(process.argv);

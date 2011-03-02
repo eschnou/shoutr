@@ -1,5 +1,5 @@
 /*
- * social.js - A decentralized social networking service
+ * shoutr - A decentralized social networking platform
  * 
  * Copyright (C) 2010 Laurent Eschenauer <laurent@eschenauer.be>
  * 
@@ -22,4 +22,4 @@
  * THE SOFTWARE.
 */
 
-module.exports = require('./lib/social.js');
+module.exports = require('./lib/shoutr');
