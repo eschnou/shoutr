@@ -28,6 +28,9 @@ var config = {
 		// The hostname serving this service (used when creating full URLs to resources)
 		host: "example.com"
 		
+		// The port on which the web server will listen
+		,port: "3000"	
+		
 		// The full path to the folder containing the database tables
 ,		database : {"path": Path.join(__dirname, "./data/")}
 };
