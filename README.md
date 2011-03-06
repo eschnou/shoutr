@@ -27,7 +27,7 @@ What it is not
 
 Shoutr is not a complete solution and only focuses on the server side of things.
 
-I do not intend to develop any client for socialJS; seeing this project more like "the apache of the social web" and I hope that others would build "the firefox of the social web". We need to decouple clients from servers so that while some focus on building the best services, other can invent the best clients. In my dream world, one could use the "social web client" of their choice with any "social web service", just like you can use any email client with any email provider.
+I do not intend to develop any client for Shoutr; seeing this project more like "the apache of the social web" and I hope that others would build "the firefox of the social web". We need to decouple clients from servers so that while some focus on building the best services, other can invent the best clients. In my dream world, one could use the "social web client" of their choice with any "social web service", just like you can use any email client with any email provider.
 
 It would be awesome if **you** start building a socialJS client for **your** favorite platform. Let me know and I'll do my best to hep out ! 
  
